@@ -1,0 +1,51 @@
+<div>
+  <!-- Shopping cart table -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Convocatorias Favoritas</h2>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered m-0">
+          <thead>
+            <tr>
+              <!-- Set columns width -->
+              <th class="text-center py-3 px-4" style="min-width: 400px;">Nombre Convocatoria </th>
+              <th class="text-right py-3 px-4" style="width: 100px;">Descripcion</th>
+              <th class="text-center py-3 px-4" style="width: 120px;">Cupos Disponibles</th>
+              <th class="text-right py-3 px-4" style="width: 100px;">Enlace</th>
+              <th class="text-right py-3 px-4" style="width: 100px;"></th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let convocatoria of convocatorias">
+              <td class="primerFila">
+                
+                <img src="../../../assets/img/convocate-img.jpg" class="d-block ui-w-40 ui-bordered mr-4" alt="">
+
+              </td>
+              <td>
+                {{convocatoria.nom_convocatoria}}
+              </td>
+              <td>
+                {{convocatoria.descripcion_conv}}
+              </td>
+              <td>
+                {{convocatoria.cupos_disponibles}}
+              </td>
+              <td>
+                {{convocatoria.enlace_conv}}
+              </td>
+              <td>
+                <button (click)="eliminarFavorito(convocatoria.id_convocatoria[0])"><button class="btn__link"><i class="fa fa-trash"></i></button></button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>

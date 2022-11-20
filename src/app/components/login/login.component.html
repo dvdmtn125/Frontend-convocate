@@ -1,0 +1,28 @@
+<div class="contenedor-login">
+    <h1 class="titulo">Iniciar Sesión</h1>
+    <div class="loginForm">
+        <form #usuarioForm="ngForm" (ngSubmit)="onSubmit(usuarioForm)" class="form">
+            <h2>Ingrese su correo y contaseña.</h2>
+            <p class="label">Correo</p>
+            <div class="inputContainer">
+                <input type="email" name="correo" [(ngModel)]="usuario.correo" #correo="ngModel" class="input"
+                    placeholder="a" required>
+            </div>
+
+            <p class="label">Nit</p>
+            <div class="inputContainer">
+                <input type="password" name="nit" [(ngModel)]="usuario.nit" #nit="ngModel" class="input" placeholder="a">
+            </div>
+
+            <input class="submitbtn" type="submit" value="Ingresar" [disabled]="!usuarioForm.form.valid">
+            <h3 class="text">¿Aún no tienes una cuenta?</h3>
+
+
+
+        </form>
+
+        <a href="registro">
+            <input class="submitbtn btnconv" type="button" value="Registrarse">
+        </a>
+    </div>
+</div>

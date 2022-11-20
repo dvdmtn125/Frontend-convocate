@@ -1,0 +1,18 @@
+<h1 class="titulo">Convocatoria</h1>
+<div class="curso__des">
+    <img class="img__curso" src="../../../assets/img/convocate-img.jpg" alt="convocate-img">
+    <div class="curso__descripcion">
+        <h2 class="curso__titulo">{{convocatoria.nom_convocatoria}}</h2>
+        <p class="curso__descripcion-texto">
+            {{convocatoria.descripcion_conv}} <br>
+            {{convocatoria.cede_convocatoria}}
+        </p>
+        <p class="curso__titulo"> Fecha Inicio: <span class="curso__value">{{convocatoria.fecha_inicio}}</span></p>
+        <p class="curso__titulo"> Fecha límite: <span class="curso__value">{{convocatoria.fecha_fin}}</span></p>
+        <p class="curso__titulo"> Mas informacion: <span class="curso__value">{{convocatoria.info_convocatoria}}</span></p>
+        <p class="curso__titulo">Cupos disponibles: <span class="curso__value">{{convocatoria.cupos_disponibles}}</span></p>
+        <a href="{{convocatoria.enlace_conv}}">
+            <button class="btn__link">Ir a la Convocatoria</button>
+        </a>
+    </div>
+</div>

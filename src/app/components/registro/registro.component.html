@@ -1,0 +1,54 @@
+<div class="contenedor-login">
+    <h1 class="titulo">Registrarse</h1>
+    <div class="loginForm">
+        <form #usuarioForm="ngForm" (ngSubmit)="onSubmit(usuarioForm)" class="form">
+            <h2>Ingrese sus datos.</h2>
+            <p class="label">Nit</p>
+            <div class="inputContainer">
+                <input type="text" name="nit" [(ngModel)]="usuario.nit" #nit="ngModel" class="input" placeholder="a"
+                    required>
+            </div>
+            <span class="form_error" *ngIf="nit.touched && !nit.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Nombres</p>
+            <div class="inputContainer">
+                <input type="text" name="nombre" [(ngModel)]="usuario.nombre" #nombre="ngModel" class="input"
+                    placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="nombre.touched && !nombre.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Apellidos</p>
+            <div class="inputContainer">
+                <input type="text" name="apellido" [(ngModel)]="usuario.apellido" #apellido="ngModel" class="input"
+                    placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="apellido.touched && !apellido.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Correo Eléctronico</p>
+            <div class="inputContainer">
+                <input type="email" name="correo" [(ngModel)]="usuario.correo" #correo="ngModel" class="input"
+                    placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="correo.touched && !correo.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Télefono</p>
+            <div class="inputContainer">
+                <input type="text" name="telefono" [(ngModel)]="usuario.telefono" #telefono="ngModel" class="input"
+                    placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="telefono.touched && !telefono.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <input class="submitbtn btnconv" type="submit" [disabled]="!usuarioForm.form.valid" value="Crear cuenta">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="contenedor-login">
+    <h1 class="titulo">Crear Convocatoria</h1>
+    <div class="loginForm">
+        <form #convocatoriaForm="ngForm" (ngSubmit)="onSubmit(convocatoriaForm)" class="form">
+            <h2>Ingrese los datos.</h2>
+            <p class="label">Nombre Convocatoria</p>
+            <div class="inputContainer">
+                <input type="text" name="nom_convocatoria" [(ngModel)]="convocatoria.nom_convocatoria"
+                    #nom_convocatoria="ngModel" class="input" placeholder="Nombre Convocatoria" required>
+            </div>
+            <span class="form_error" *ngIf="nom_convocatoria.touched && !nom_convocatoria.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Descripcion Convocatoria</p>
+            <div class="inputContainer">
+                <input type="text" name="descripcion_conv" [(ngModel)]="convocatoria.descripcion_conv"
+                    #descripcion_conv="ngModel" class="input" placeholder="Descripcion Convocatoria" required>
+            </div>
+            <span class="form_error" *ngIf="descripcion_conv.touched && !descripcion_conv.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Cede Convocatoria</p>
+            <div class="inputContainer">
+                <input type="text" name="cede_convocatoria" [(ngModel)]="convocatoria.cede_convocatoria"
+                    #cede_convocatoria="ngModel" class="input" placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="cede_convocatoria.touched && !cede_convocatoria.valid">
+                Esta informacion es obligatoria
+            </span>  
+            
+            <p class="label">Información Convocatoria</p>
+            <div class="inputContainer">
+                <input type="text" name="info_convocatoria" [(ngModel)]="convocatoria.info_convocatoria"
+                    #info_convocatoria="ngModel" class="input" placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="info_convocatoria.touched && !info_convocatoria.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Cupos Disponibles</p>
+            <div class="inputContainer">
+                <input type="text" name="cupos_disponibles" [(ngModel)]="convocatoria.cupos_disponibles"
+                    #cupos_disponibles="ngModel" class="input" placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="cupos_disponibles.touched && !cupos_disponibles.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Enlace Convocatoria</p>
+            <div class="inputContainer">
+                <input type="text" name="enlace_conv" [(ngModel)]="convocatoria.enlace_conv"
+                    #enlace_conv="ngModel" class="input" placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="enlace_conv.touched && !cupos_disponibles.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Fecha Inicio</p>
+            <div class="inputContainer">
+                <input type="date" name="fecha_inicio" [(ngModel)]="convocatoria.fecha_inicio" #fecha_inicio="ngModel"
+                    class="input" placeholder="a" required>              
+            </div>
+            <span class="form_error" *ngIf="fecha_inicio.touched && !fecha_inicio.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Fecha Fin</p>
+            <div class="inputContainer">
+                <input type="date" name="fecha_fin" [(ngModel)]="convocatoria.fecha_fin" #fecha_fin="ngModel"
+                    class="input" placeholder="a" required>
+            </div>
+            <span class="form_error" *ngIf="fecha_fin.touched && !fecha_fin.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <p class="label">Estado Convocatoria</p>
+            <div class="inputContainer">
+                <!-- <input type="date" name="id_estado" [(ngModel)]="convocatoria.id_estado" #id_estado="ngModel"
+                    class="input" placeholder="a" required> -->
+                <select class="select" name="id_estado" #id_estado="ngModel" [(ngModel)]="convocatoria.id_estado" required>
+                    <option value="1" class="option">Activa</option>
+                    <option value="3" class="option">Inactiva</option>                    
+                </select>
+            </div>
+            <span class="form_error" *ngIf="id_estado.touched && !id_estado.valid">
+                Esta informacion es obligatoria
+            </span>
+
+            <input class="submitbtn btnconv" type="submit" [disabled]="!convocatoriaForm.form.valid" value="Crear Convocatoria">
+        </form>
+    </div>
+</div>

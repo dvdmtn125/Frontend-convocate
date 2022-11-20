@@ -1,0 +1,79 @@
+<h1>{{nit}}</h1>
+<div class="contenedor-login">
+    <h1 class="titulo">Modificar Datos Usuario</h1>
+    <div class="loginForm">
+        <form #usuarioForm="ngForm" (ngSubmit)="onSubmit(usuarioForm)" class="form">            
+            <div class="inputContainer">
+                <input type="text" name="nit" [(ngModel)]="usuario.nit" #nit="ngModel" class="input" placeholder="a"
+                    required>
+                <label for="" class="label">Nit</label>
+
+                <span class="form_error" *ngIf="nit.touched && !nit.valid">
+                    Esta informacion es obligatoria
+                </span>
+            </div>
+
+            <div class="inputContainer">
+                <input type="text" name="nombre" [(ngModel)]="usuario.nombre" #nombre="ngModel" class="input"
+                    placeholder="a" required>
+                <label for="" class="label">Nombres</label>
+
+                <span class="form_error" *ngIf="nombre.touched && !nombre.valid">
+                    Esta informacion es obligatoria
+                </span>
+            </div>
+            <div class="inputContainer">
+                <input type="text" name="apellido" [(ngModel)]="usuario.apellido" #apellido="ngModel" class="input"
+                    placeholder="a" required>
+                <label for="" class="label">Apellidos</label>
+                <span class="form_error" *ngIf="apellido.touched && !apellido.valid">
+                    Esta informacion es obligatoria
+                </span>
+            </div>
+            <div class="inputContainer">
+                <input type="email" name="correo" [(ngModel)]="usuario.correo" #correo="ngModel" class="input"
+                    placeholder="a" required>
+                <label for="" class="label">Correo Electrónico</label>
+                <span class="form_error" *ngIf="correo.touched && !correo.valid">
+                    Esta informacion es obligatoria
+                </span>
+            </div>
+            <div class="inputContainer">
+                <input type="text" name="telefono" [(ngModel)]="usuario.telefono" #telefono="ngModel" class="input"
+                    placeholder="a" required>
+                <label for="" class="label">Télefono</label>
+                <span class="form_error" *ngIf="telefono.touched && !telefono.valid">
+                    Esta informacion es obligatoria
+                </span>
+            </div>
+            <div class="inputContainer">
+                <!-- <input type="date" name="id_estado" [(ngModel)]="convocatoria.id_estado" #id_estado="ngModel"
+                    class="input" placeholder="a" required> -->
+                <select name="id_tipo_rol" #id_tipo_rol="ngModel" [(ngModel)]="usuario.id_tipo_rol" required>
+                    <option value="8">Administrador</option>
+                    <option value="9">Usuario</option>                    
+                </select>
+                <label for="" class="label"> Rol</label>
+
+                <span class="form_error" *ngIf="id_tipo_rol.touched && !id_tipo_rol.valid">
+                    Esta informacion es obligatoria
+                </span>
+            </div>
+            <div class="inputContainer">
+                <!-- <input type="date" name="id_estado" [(ngModel)]="convocatoria.id_estado" #id_estado="ngModel"
+                    class="input" placeholder="a" required> -->
+                <select name="id_estado" #id_estado="ngModel" [(ngModel)]="usuario.id_estado" required>
+                    <option value="1">Activo</option>
+                    <option value="3">Inactivo</option>                    
+                </select>
+                <label for="" class="label"> Estado</label>
+
+                <span class="form_error" *ngIf="id_estado.touched && !id_estado.valid">
+                    Esta informacion es obligatoria
+                </span>
+            </div>
+
+            <input class="submitbtn" type="submit" [disabled]="!usuarioForm.form.valid" value="Actualizar">
+        </form>
+    </div>
+</div>

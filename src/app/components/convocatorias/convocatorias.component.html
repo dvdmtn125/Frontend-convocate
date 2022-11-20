@@ -1,0 +1,25 @@
+<h1 class="titulo">Convocatorias</h1>
+<div class="contenedor__convocatorias">
+        <div class="curso" *ngFor="let convocatoria of listaConvocatorias">
+            <div class="curso__dinamico" *ngIf="convocatoria.id_estado == 1">
+                <img class="img__curso" src="../../../assets/img/convocate-img.jpg" alt="convocate-img">
+                <div class="curso__descripcion">
+                    <h2 class="curso__titulo">{{convocatoria.nom_convocatoria}}</h2>
+                    <p class="curso__titulo"> Fecha límite: <span class="curso__value">{{convocatoria.fecha_fin}}</span>
+                    </p>
+                    <p class="curso__titulo"> Enlace: <a class="curso__value"
+                            href="{{convocatoria.enlace_conv}}">{{convocatoria.enlace_conv}}</a></p>
+                    <p class="curso__titulo">Cupos disponibles: <span
+                            class="curso__value">{{convocatoria.cupos_disponibles}}</span></p>
+                    <a href="convocatoria/{{convocatoria.id_convocatoria}}">
+                        <button class="btn__link">Más Informacion</button>
+                    </a>
+                    
+                    <button class="btn__link" *ngIf="_usuarioService.esUsuario()" (click)="agregarFavoritos(convocatoria.id_convocatoria)"><i class="fa fa-heart"></i></button>
+                    <button class="btn__link" *ngIf="_usuarioService.esAdministrador()" (click)="eliminarConvocatoria(convocatoria.id_convocatoria)">Eliminar</button>
+                    <button class="btn__link" *ngIf="_usuarioService.esAdministrador()" (click)="eliminarConvocatoria(convocatoria.id_convocatoria)">Modificar</button>
+                </div>
+            </div>
+
+        </div>
+</div>
