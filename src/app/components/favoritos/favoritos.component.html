@@ -10,36 +10,31 @@
           <thead>
             <tr>
               <!-- Set columns width -->
-              <th class="text-center py-3 px-4" style="min-width: 400px;">Nombre Convocatoria </th>
-              <th class="text-right py-3 px-4" style="width: 100px;">Descripcion</th>
-              <th class="text-center py-3 px-4" style="width: 120px;">Cupos Disponibles</th>
-              <th class="text-right py-3 px-4" style="width: 100px;">Enlace</th>
-              <th class="text-right py-3 px-4" style="width: 100px;"></th>
+              <th class="text-center py-3 px-4 text__fav" style="min-width: 400px;">Nombre Convocatoria </th>
+              <th class="text-right py-3 px-4 text__fav" style="width: 350px;">Descripcion</th>
+              <th class="text-center py-3 px-4 text__fav" style="width: 120px;">Cupos Disponibles</th>
+              <th class="text-right py-3 px-4 text__fav" style="width: 125px;">Enlace</th>
+              <th class="text-right py-3 px-4 text__fav" style="width: 225px;"></th>
 
             </tr>
           </thead>
           <tbody>
 
-            <tr *ngFor="let convocatoria of convocatorias">
-              <td class="primerFila">
-                
-                <img src="../../../assets/img/convocate-img.jpg" class="d-block ui-w-40 ui-bordered mr-4" alt="">
-
-              </td>
-              <td>
+            <tr *ngFor="let convocatoria of convocatorias" class="fila__txt">
+              <td style="width: 400px">
                 {{convocatoria.nom_convocatoria}}
               </td>
-              <td>
+              <td style="width: 350px">
                 {{convocatoria.descripcion_conv}}
               </td>
-              <td>
+              <td style="width: 120px">
                 {{convocatoria.cupos_disponibles}}
               </td>
-              <td>
+              <td style="width: 225px">
                 {{convocatoria.enlace_conv}}
               </td>
               <td>
-                <button (click)="eliminarFavorito(convocatoria.id_convocatoria[0])"><button class="btn__link"><i class="fa fa-trash"></i></button></button>
+                <button class="btn-icon" (click)="eliminarFavorito(convocatoria.id_convocatoria[0])"><button class="btn__link"><i class="fa fa-trash"></i></button></button>
               </td>
             </tr>
 
