@@ -645,9 +645,24 @@ body{margin-top:20px;}
 }
 .primerFila{
     width: 5rem;
+    font-size: 1.5rem;
 }
 
 .table-responsive {
     display: flex;
     justify-content: center;
+}
+
+.text__fav {
+    font-size: 2rem;
+}
+
+.fila__txt {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
 }
